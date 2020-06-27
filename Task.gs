@@ -73,7 +73,7 @@ function deleteTask(id){
 }
 
 
-function TestgetKeyIndexRow(sheet, key, key_col) {
-  var result = getKeyIndexRow(sheetTask, "I9F1PC88" ,1);
+function TestgetKeyIndexColmun() {
+  var result = getKeyIndexColmun(sheetTask, "詳細" ,1);
   Logger.log(result);
 }
