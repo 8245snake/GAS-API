@@ -25,7 +25,12 @@ function doGet(e) {
     var response = {"events" : getEvents(targetDate)};
     break;
   case "tasks":
-      var response = {"tasks" : getMyTasks()};
+      if (request.method == "delete"){
+        deleteTask(request.id);
+        response = {"message" : request.id + "を完了済みにしました"};
+      }else{
+        response = {"tasks" : getMyTasks()};
+      }
     break;
   case "bus":
     break;
@@ -88,7 +93,7 @@ function doPost(e) {
 // doGet をテストする
 function testDoGet() {
   
-  var data = {"type":"events"};
+  var data = {"type":"tasks", "method":"delete", "id":"I9F1PC88"};
   var e = new Object();
   e.parameter = data;
   doGet(e);

@@ -63,7 +63,17 @@ function createUniqueID(){
   return result;
 }
 
-function test(){
-  //Logger.log(getMyTasks());
-  Logger.log(createUniqueID());
+//指定したIDのタスクを完了済みにする
+function deleteTask(id){
+  var rowIndex = getKeyIndexRow(sheetTask, id, COL_ID);
+  if (rowIndex < 2){
+    return;
+  }
+  sheetTask.getRange(rowIndex, COL_COMPLETED).setValue(true);
+}
+
+
+function TestgetKeyIndexRow(sheet, key, key_col) {
+  var result = getKeyIndexRow(sheetTask, "I9F1PC88" ,1);
+  Logger.log(result);
 }
