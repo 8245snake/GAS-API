@@ -32,7 +32,15 @@ function doGet(e) {
         response = {"tasks" : getMyTasks()};
       }
     break;
-  case "bus":
+  case "schedules":
+      var targetDate = new Date();
+      if (request.day){
+        tmpDate = new Date(request.day);
+        if (tmpDate.toString() !== "Invalid Date"){
+          targetDate = tmpDate;
+        }
+      }
+    var response = {"schedules" : getScheduleAllMember(targetDate)};
     break;
   default:
     break;
