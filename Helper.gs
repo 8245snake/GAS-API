@@ -41,6 +41,10 @@ function getKeyIndexColmun(sheet, key, key_row, compare_method=null){
 }
 
 function is_same_date(date1, date2){
+  try{
+    var uxtime = (date1 - 25569) * 86400000;
+    //日付セルから
+    date1 = new Date(uxtime);
     if (date1.getFullYear() != date2.getFullYear()){
       return false;
     }
@@ -51,4 +55,9 @@ function is_same_date(date1, date2){
       return false;
     }
     return true;
+  }
+  catch(e){
+    return false;
+  }
+
 }

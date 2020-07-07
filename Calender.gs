@@ -14,6 +14,7 @@ function getEvents(date){
   
   myEvents.forEach(function(event){
     var data = new Object();
+    data.id = event.getId();
     data.title = event.getTitle();
     data.description = event.getDescription();
     data.start = Utilities.formatDate(event.getStartTime(), 'Asia/Tokyo', 'yyyy/MM/dd HH:mm');
@@ -55,13 +56,7 @@ function createEvents(events){
 
 
 function testCalender(){
-  var d1 = new Date('');
-  if (d1.toString() === "Invalid Date"){
-    Logger.log("errro");
-  }
-  var d2 = new Date('2020-06-25');
-  var d3 = new Date('2020/02/03');
-  Logger.log(d3);
+  getEvents(new Date());
 }
 
 

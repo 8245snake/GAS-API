@@ -1,7 +1,7 @@
 //日付の行
-const ROW_DATE = 3;
+const ROW_DATE = 2;
 //メンバーの列
-const COL_MEMBER = 1;
+const COL_MEMBER = 2;
 //シート
 var sheetSchedule = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('スケジュール');
 
